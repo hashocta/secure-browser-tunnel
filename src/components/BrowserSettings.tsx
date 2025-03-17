@@ -4,7 +4,7 @@ import { Button } from "@/components/ui-custom/Button";
 import { Input } from "@/components/ui-custom/Input";
 import { Switch } from "@/components/ui/switch";
 import { Menubar, MenubarMenu, MenubarTrigger, MenubarContent, MenubarItem, MenubarSeparator } from "@/components/ui/menubar";
-import { Badge } from "@/components/ui-custom/Card";
+import { Badge } from "@/components/ui/badge";
 import { Settings, Shield, Lock, Wifi, Moon, Sun, Globe, Database } from "lucide-react";
 
 interface BrowserSettingsProps {

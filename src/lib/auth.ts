@@ -5,6 +5,13 @@
 import { AuthFormData } from "./validation";
 import { toast } from "@/hooks/use-toast";
 
+// Hardcoded credentials (in a real app, these would be in environment variables)
+const AUTH_CREDENTIALS = {
+  username: "admin",
+  email: "admin@local.net",
+  password: "Admin@123"
+};
+
 // Simulated authentication function
 export async function authenticateUser(data: AuthFormData): Promise<{ success: boolean, token?: string, error?: string }> {
   try {
@@ -13,20 +20,15 @@ export async function authenticateUser(data: AuthFormData): Promise<{ success: b
     // with a 1 second delay to mimic network latency
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    // For demo purposes, we'll authorize any valid form submission
+    // For demo purposes, we'll authorize valid credentials
     // In a real app, you would validate against backend stored credentials
-    // Example credentials for demonstration:
-    const validUsername = "admin";
-    const validEmail = "admin@example.com";
-    const validPassword = "SecurePass1!";
-    
     if (
-      data.username === validUsername && 
-      data.email === validEmail && 
-      data.password === validPassword
+      data.username === AUTH_CREDENTIALS.username && 
+      data.email === AUTH_CREDENTIALS.email && 
+      data.password === AUTH_CREDENTIALS.password
     ) {
       // Generate a mock JWT token
-      const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTYxNjE1MTYxNiwiZXhwIjoxNjE2MTU1MjE2fQ.hV8Yj8kHyxBVdQYWVBhFSt4OFnKBhp6JFNSCgqcpTfY";
+      const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBsb2NhbC5uZXQiLCJpYXQiOjE2MTYxNTE2MTYsImV4cCI6MTYxNjE1NTIxNn0.SomeRandomSignature";
       
       // Store the token in localStorage for demo purposes
       // In a real application, you might use HTTP-only cookies or a more secure approach

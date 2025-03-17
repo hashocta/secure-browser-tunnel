@@ -269,7 +269,7 @@ export function AuthForm() {
           <div className="pt-4 mt-4 border-t text-center text-xs text-muted-foreground">
             <p>For demo purposes use these credentials:</p>
             <p className="mt-1 font-medium">
-              Username: admin | Email: admin@example.com | Password: SecurePass1!
+              Username: admin | Email: admin@local.net | Password: Admin@123
             </p>
           </div>
         </div>
